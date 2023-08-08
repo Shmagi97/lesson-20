@@ -3,87 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async defer src="index.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <!-- <button class="btn" id="open-reg-form">New User</button> -->
-    <!-- <section>
+    <button class="btn" id="open-reg-form">New User</button>
+    <section>
       <div class="modal" id="reg-modal">
         <div class="modal-content">
           <div class="modal-header">
-            <h3></h3>
-            <button class="btn delete modal-close">X</button>
+            <h3>modal register</h3>
+            <button class="btn-close delete modal-close">X</button>
           </div>
           <div class="modal-body">
-            <form class="form" id="reg" action="#" method="#">
+            <form class="form" id="reg" action="#" method="POST">
               <input id="user_id" type="hidden" placeholder="" value="" />
               <div class="input-field">
-                <label for="user_name">Enter User Name</label>
+                <label for="user_name">Title</label>
                 <input
                   type="text"
-                  id="user_name"
+                  id="user_title"
                   placeholder="user name"
                   required
                 />
               </div>
               <div class="input-field">
-                <label for="user_surname">Enter User Surname</label>
+                <label for="user_surname">Body</label>
                 <input
                   type="text"
-                  id="user_surname"
+                  id="user_body"
                   placeholder="user surname"
                   required
                 />
               </div>
 
               <div class="input-field">
-                <label for="user_phone">Enter phone number</label>
+                <label for="user_phone">User ID</label>
                 <input
                   type="number"
-                  id="user_phone"
+                  id="user_ID"
                   placeholder="phone number"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="user_personal-id">Enter personal id</label>
-                <input
-                  type="number"
-                  id="user_personal-id"
-                  placeholder="personal id"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="user_email">Enter Email</label>
-                <input
-                  type="email"
-                  id="user_email"
-                  placeholder="email"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="user_zip-code">Enter zip code</label>
-                <input
-                  type="text"
-                  id="user_zip-code"
-                  placeholder="zip code"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="user_gender">Enter gender</label>
-                <input
-                  type="text"
-                  id="user_gender"
-                  placeholder="gender"
                   required
                 />
               </div>
@@ -95,6 +55,165 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
+
+    <section class="section-table">
+      <table class="table table-form">
+        <tr>
+          <th>Title</th>
+          <th>Bady</th>
+          <th>User ID</th>
+          <th class="last-th">Action</th>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-html-title"></td>
+          <td class="td-html-body"></td>
+          <td class="td-html-userId"></td>
+
+          <td class="btn-td">
+            <button class="delete" data-user-id="deleteBtn">DELETE</button>
+            <button class="edit" data-user-id="editBtn">EDIT</button>
+          </td>
+        </tr>
+      </table>
+
+      <div class="modal-user-info" id="reg-modal">
+        <div class="modal-content-user-info">
+          <div class="modal-header">
+            <h3>modal register</h3>
+            <button class="btn-close-user-info delete modal-close">X</button>
+          </div>
+          <div class="modal-body">
+            <form class="form-edit-info" id="reg" action="#" method="POST">
+              <input id="user_id-info" placeholder="" value="" />
+              <div class="input-field">
+                <label for="user_name">Title</label>
+                <input
+                  type="text"
+                  id="user_title-info"
+                  placeholder="user name"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label for="user_surname">Body</label>
+                <input
+                  type="text"
+                  id="user_body-info"
+                  placeholder="user surname"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="user_phone">User ID</label>
+                <input
+                  type="number"
+                  id="user_ID-info"
+                  placeholder="phone number"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <button class="btn" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script async defer src="index.js"></script>
   </body>
 </html>
