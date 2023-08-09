@@ -155,5 +155,5 @@ td {
   width: 700px;
   height: 500px;
   left: 300px;
-  visibility: hidden;
+  display: none;
 }

@@ -37,6 +37,7 @@ const inputTitle = document.querySelector("#user_title");
 const inputBody = document.querySelector("#user_body");
 const inputID = document.querySelector("#user_ID");
 const formHtml = document.querySelector(".form");
+const btnTd = document.querySelectorAll(".btn-td");
 
 function CreatNewUser(newUser) {
   fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -100,9 +101,22 @@ fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
       tdHtmlBodyArray[index].innerText = el.body;
       tdHtmlIdArray[index].innerText = el.userId;
 
+      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   აგვიანებს ინდექსის გადაცემას
+
+      function elementIdDeleteBatonidan(btnDeleteIndex) {
+        btnDelete[btnDeleteIndex].addEventListener("click", () => {
+          userIdInfoHidden.value = el.id;
+          console.log(userIdInfoHidden.value, "esaa");
+        });
+      }
+
+      elementIdDeleteBatonidan(index);
+
+      //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
       function elementIndexbTenidan(btnIndex) {
         btnEdit[btnIndex].addEventListener("click", () => {
-          modalUserInfo.style.visibility = "visible";
+          modalUserInfo.style.display = "block";
           userTitleInfoButton.value = tdHtmlTitleArray[btnIndex].innerText;
           userBodyInfoButton.value = tdHtmlBodyArray[btnIndex].innerText;
           userIdInfoButton.value = tdHtmlIdArray[btnIndex].innerText;
@@ -113,13 +127,17 @@ fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
       elementIndexbTenidan(index);
 
       btnModalUserInfoClose.addEventListener("click", () => {
-        modalUserInfo.style.visibility = "hidden";
+        modalUserInfo.style.display = "none";
+        userTitleInfoButton.value = "";
+        userBodyInfoButton.value = "";
+        userIdInfoButton.value = "";
+        userIdInfoHidden.value = "";
       });
     });
   });
 
-function updateUser(newUserEdit) {
-  fetch(`https://jsonplaceholder.typicode.com/posts/1${newUserEdit.id}`, {
+function newUserEditFN(newUserEdit) {
+  fetch(`https://jsonplaceholder.typicode.com/posts/ ${newUserEdit.id}`, {
     method: "PUT",
     body: JSON.stringify(newUserEdit),
     headers: {
@@ -152,12 +170,12 @@ formEditInfo.addEventListener("submit", (el) => {
     userId: userIdInfoButton.value,
   };
 
-  updateUser(newUserEdit);
+  newUserEditFN(newUserEdit);
   // console.log(newUserEdit.id);
 });
 
 function deleteUser(deletedUser) {
-  fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  fetch(`https://jsonplaceholder.typicode.com/posts/ ${deletedUser.id}`, {
     method: "DELETE",
     body: JSON.stringify(deletedUser),
     headers: {
@@ -167,19 +185,6 @@ function deleteUser(deletedUser) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      data.forEach((el, index) => {
-        function dataElementsTextInTablle(tableIndex) {
-          userTitleInfoButton.value = tdHtmlTitleArray[tableIndex].innerText;
-          userBodyInfoButton.value = tdHtmlBodyArray[tableIndex].innerText;
-          userIdInfoButton.value = tdHtmlIdArray[tableIndex].innerText;
-          userIdInfoHidden.value = el.id;
-        }
-
-        btnDelete[index].addEventListener("click", () => {
-          dataElementsTextInTablle(index);
-        });
-        console.log(el);
-      });
     })
     .catch((error) => {
       console.log(error);
@@ -192,14 +197,24 @@ function deleteUser(deletedUser) {
 const btnDeleteArray = Array.from(btnDelete);
 
 btnDeleteArray.forEach((btn, index) => {
+  function deleteHtmTableInfo(btnIndex) {
+    tdHtmlTitle[btnIndex].remove();
+    tdHtmlBody[btnIndex].remove();
+    tdHtmlId[btnIndex].remove();
+    btnTd[btnIndex].remove();
+    btnDelete[btnIndex].remove();
+    btnEdit[btnIndex].remove();
+  }
+
   btn.addEventListener("click", () => {
     const deletedUser = {
       id: userIdInfoHidden.value,
-      title: userTitleInfoButton.value,
-      body: userBodyInfoButton.value,
-      userId: userIdInfoButton.value,
     };
 
+    console.log(deletedUser.id, "meore");
+
     deleteUser(deletedUser);
+
+    deleteHtmTableInfo(index);
   });
 });
