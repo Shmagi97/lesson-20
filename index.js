@@ -90,7 +90,7 @@ const btnModalUserInfoClose = document.querySelector(".btn-close-user-info");
 const userTitleInfoButton = document.querySelector("#user_title-info");
 const userBodyInfoButton = document.querySelector("#user_body-info");
 const userIdInfoButton = document.querySelector("#user_ID-info");
-const userIdInfoHidden = document.querySelector("#user_id-info");
+const userIdInfoHidden = document.querySelector("#user_id-info-in-server");
 
 fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
   .then((res) => res.json())
@@ -106,7 +106,6 @@ fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
       function elementIdDeleteBatonidan(btnDeleteIndex) {
         btnDelete[btnDeleteIndex].addEventListener("click", () => {
           userIdInfoHidden.value = el.id;
-          console.log(userIdInfoHidden.value, "esaa");
         });
       }
 
@@ -196,25 +195,35 @@ function deleteUser(deletedUser) {
 
 const btnDeleteArray = Array.from(btnDelete);
 
+// btnDeleteArray.forEach((btn, index) => {
+//   function deleteHtmTableInfo(btnIndex) {
+//     tdHtmlTitle[btnIndex].remove();
+//     tdHtmlBody[btnIndex].remove();
+//     tdHtmlId[btnIndex].remove();
+//     btnTd[btnIndex].remove();
+//     btnDelete[btnIndex].remove();
+//     btnEdit[btnIndex].remove();
+//   }
+
+//   btn.addEventListener("click", () => {
+//     const deletedUser = {
+//       id: userIdInfoHidden.value,
+//     };
+
+//     console.log(deletedUser.id, "meore");
+
+//     deleteUser(deletedUser);
+
+//     deleteHtmTableInfo(index);
+//   });
+// });
+
 btnDeleteArray.forEach((btn, index) => {
-  function deleteHtmTableInfo(btnIndex) {
-    tdHtmlTitle[btnIndex].remove();
-    tdHtmlBody[btnIndex].remove();
-    tdHtmlId[btnIndex].remove();
-    btnTd[btnIndex].remove();
-    btnDelete[btnIndex].remove();
-    btnEdit[btnIndex].remove();
+  function atributeInBtn(btnIndexAtribut) {
+    // ფუნქციამ ააიღოს ქამალქაის ატრიბუტი ბატონიდან  ბათონმა უნდა აიღოს სერვერიდან მირებული აიდი რომელიც ჰიდენ ინპუტში იქნება შენახული
   }
-
   btn.addEventListener("click", () => {
-    const deletedUser = {
-      id: userIdInfoHidden.value,
-    };
-
-    console.log(deletedUser.id, "meore");
-
-    deleteUser(deletedUser);
-
-    deleteHtmTableInfo(index);
+    const userIdAtributi = btn.dataset.userId;
+    console.log(userIdAtributi);
   });
 });
