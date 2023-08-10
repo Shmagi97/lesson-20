@@ -75,12 +75,12 @@ formHtml.addEventListener("submit", (el) => {
   console.log(newUser);
 });
 
-const tdHtmlTitle = document.querySelectorAll(".td-html-title");
-const tdHtmlTitleArray = Array.from(tdHtmlTitle);
-const tdHtmlBody = document.querySelectorAll(".td-html-body");
-const tdHtmlBodyArray = Array.from(tdHtmlBody);
-const tdHtmlId = document.querySelectorAll(".td-html-userId");
-const tdHtmlIdArray = Array.from(tdHtmlId);
+// const tdHtmlTitle = document.querySelectorAll(".td-html-title");
+// const tdHtmlTitleArray = Array.from(tdHtmlTitle);
+// const tdHtmlBody = document.querySelectorAll(".td-html-body");
+// const tdHtmlBodyArray = Array.from(tdHtmlBody);
+// const tdHtmlId = document.querySelectorAll(".td-html-userId");
+// const tdHtmlIdArray = Array.from(tdHtmlId);
 
 const btnDelete = document.querySelectorAll(".delete");
 const btnEdit = document.querySelectorAll(".edit");
