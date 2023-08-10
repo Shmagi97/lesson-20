@@ -106,14 +106,23 @@ function renderUsers(sarenderoElementebi) {
 
   tableJs.innerHTML = dataElementHtmlshi.join("");
 
+  const userTitleInfoInput = document.querySelector("#user_title-info");
+  const userBodyInfoInput = document.querySelector("#user_body-info");
+  const userIdInfoInput = document.querySelector("#user_ID-info");
+  const userIdInfoHidden = document.querySelector("#user_id-info-in-server");
+
   const btnEdit = document.querySelectorAll(".edit");
   const btnEditArray = Array.from(btnEdit);
 
   btnEditArray.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       modalUserInfo.style.display = "block";
+      userTitleInfoInput.value = sarenderoElementebi[index].title;
+      userBodyInfoInput.value = sarenderoElementebi[index].body;
+      userIdInfoInput.value = sarenderoElementebi[index].userId;
     });
   });
+  console.log(sarenderoElementebi);
 }
 
 btnModalUserInfoClose.addEventListener("click", () => {
