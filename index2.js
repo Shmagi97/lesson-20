@@ -63,6 +63,12 @@ formHtml.addEventListener("submit", (el) => {
 // const tdHtmlId = document.querySelectorAll(".td-html-userId");
 // const tdHtmlIdArray = Array.from(tdHtmlId);
 
+fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+  .then((res) => res.json())
+  .then((data) => {
+    renderUsers(data);
+  });
+
 const tableJs = document.querySelector(".table-form");
 
 function getAllUsers() {
@@ -73,7 +79,10 @@ function getAllUsers() {
     });
 }
 
-getAllUsers();
+// getAllUsers();  am funqcias gamodzaxeb mashin roca cxrili serveridan aris gasanaxlebeli
+
+const btnModalUserInfoClose = document.querySelector(".btn-close-user-info");
+const modalUserInfo = document.querySelector(".modal-user-info");
 
 function renderUsers(sarenderoElementebi) {
   const dataElementHtmlshi = sarenderoElementebi.map((el, index) => {
@@ -96,7 +105,17 @@ function renderUsers(sarenderoElementebi) {
   });
 
   tableJs.innerHTML = dataElementHtmlshi.join("");
-  console.log(tableJs);
+
+  const btnEdit = document.querySelectorAll(".edit");
+  const btnEditArray = Array.from(btnEdit);
+
+  btnEditArray.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      modalUserInfo.style.display = "block";
+    });
+  });
 }
 
-// renderUsers();
+btnModalUserInfoClose.addEventListener("click", () => {
+  modalUserInfo.style.display = "none";
+});
