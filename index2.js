@@ -121,8 +121,8 @@ function renderUsers(sarenderoElementebi) {
 
   //   @@@@@@@@@@@@@@@@@@
 
-  const tdHtmlTitle = document.querySelectorAll(".td-html-title");
-  const tdHtmlTitleArray = Array.from(tdHtmlTitle);
+  // const tdHtmlTitle = document.querySelectorAll(".td-html-title");
+  // const tdHtmlTitleArray = Array.from(tdHtmlTitle);
   const tdHtmlBody = document.querySelectorAll(".td-html-body");
   const tdHtmlBodyArray = Array.from(tdHtmlBody);
   const tdHtmlId = document.querySelectorAll(".td-html-userId");
@@ -177,6 +177,13 @@ function renderUsers(sarenderoElementebi) {
 
   // @@@@@@@@
 }
+
+getAllUsers();
+
+const tdHtmlTitle = document.querySelectorAll(".td-html-title");
+const tdHtmlTitleArray = Array.from(tdHtmlTitle);
+
+console.log(tdHtmlTitle);
 
 btnModalUserInfoClose.addEventListener("click", () => {
   modalUserInfo.style.display = "none";
